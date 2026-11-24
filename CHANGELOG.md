@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Agent Skills 形式の名前と説明を追加し、各対応ツールで `agent-friendly-app-design` として読み込めるようにした。
+- README にローカルでの導入手順とツール別の保存先を追加した。
+
 ## v1.0.0 (2026-11-24)
 
 - 初回公開

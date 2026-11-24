@@ -1,3 +1,9 @@
+---
+name: agent-friendly-app-design
+description: 自作アプリを AI エージェントが GUI なしで操作・検証できるように設計、監査、実装するときに使う。CLI 対応、JSON 入出力、安定 ID、状態確認、ドライラン、verify、MCP 対応、SDK の要否を扱う。
+license: MIT
+---
+
 # AIが使えるアプリ設計（Agent-Friendly App Design）
 
 ## 概要（発動条件）
