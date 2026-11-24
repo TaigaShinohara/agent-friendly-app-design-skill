@@ -19,21 +19,42 @@
 
 | ファイル | 内容 |
 | --- | --- |
-| `skills/agent_friendly_app_design/SKILL.md` | スキル本体（核、到達レベル、CLI 契約、MCP 層、SDK 層、進め方） |
-| `skills/agent_friendly_app_design/references/checklist.md` | 監査〜実装のチェックリストと `agent-manifest.json` の様式 |
-| `skills/agent_friendly_app_design/references/platform-patterns.md` | Android / Flutter / Web・Space / スクリプト別の実現方法と MCP の置き方 |
-| `skills/agent_friendly_app_design/references/kikkake-worked-example.md` | 実アプリへの当てはめ例（監査と段階計画） |
-| `skills/agent_friendly_app_design/templates/agent-guide-template.md` | アプリに同梱する AI 向けガイド（AGENT_GUIDE）の雛形 |
-| `skills/agent_friendly_app_design/skill.yaml` | Muse 用スキル定義 |
-| `skills/agent_friendly_app_design/agents/openai.yaml` | Codex 用インターフェース定義 |
+| `skills/agent-friendly-app-design/SKILL.md` | スキル本体（核、到達レベル、CLI 契約、MCP 層、SDK 層、進め方） |
+| `skills/agent-friendly-app-design/references/checklist.md` | 監査〜実装のチェックリストと `agent-manifest.json` の様式 |
+| `skills/agent-friendly-app-design/references/platform-patterns.md` | Android / Flutter / Web・Space / スクリプト別の実現方法と MCP の置き方 |
+| `skills/agent-friendly-app-design/references/kikkake-worked-example.md` | 実アプリへの当てはめ例（監査と段階計画） |
+| `skills/agent-friendly-app-design/templates/agent-guide-template.md` | アプリに同梱する AI 向けガイド（AGENT_GUIDE）の雛形 |
+| `skills/agent-friendly-app-design/skill.yaml` | Muse 用スキル定義 |
+| `skills/agent-friendly-app-design/agents/openai.yaml` | Codex 用インターフェース定義 |
+
+## インストール
+
+このリポジトリを取得し、`skills/agent-friendly-app-design/` をフォルダごと次の保存先に置きます。スキル本体と補助資料を同じフォルダに入れておくと、スキルからチェックリストやテンプレートを参照できます。
+
+| ツール | このマシンの個人用保存先 |
+| --- | --- |
+| [Codex](https://learn.chatgpt.com/docs/build-skills)、[Cursor](https://cursor.com/docs/skills)、[Devin Local](https://docs.devin.ai/desktop/devin-local/customizations)、[Gemini CLI](https://geminicli.com/docs/cli/skills/) | `~/.agents/skills/` |
+| [GitHub Copilot CLI / VS Code](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) | `~/.agents/skills/` または `~/.copilot/skills/` のいずれか |
+| [Antigravity](https://antigravity.google/docs/skills) | `~/.gemini/config/skills/` |
+| [Claude Code](https://code.claude.com/docs/en/skills) | `~/.claude/skills/` |
+
+macOS / Linux で共通の個人用保存先に初めて導入する例です。
+
+```sh
+git clone --depth 1 https://github.com/TaigaShinohara/agent-friendly-app-design-skill.git
+mkdir -p "$HOME/.agents/skills"
+cp -R agent-friendly-app-design-skill/skills/agent-friendly-app-design "$HOME/.agents/skills/"
+```
+
+導入後は新しいチャットを開いて呼び出します。GitHub.com 上の Copilot で使うプロジェクトでは、そのプロジェクトの `.github/skills/` にスキルを追加します。
 
 ## 使い方
 
-スキル対応の AI エージェント（Claude / Codex 等）に `skills/agent_friendly_app_design/` を読み込ませ、「CLI対応にして」「AIが使えるようにして」「MCP対応にして」などと依頼するだけです。新規アプリの設計段階でも、既存アプリへの後付け監査でも使えます。
+「このアプリを AI が操作できるように、まず CLI で読み取れる機能を監査して」などと依頼します。明示的に使う場合は Codex で `$agent-friendly-app-design`、Antigravity・Cursor・Claude Code で `/agent-friendly-app-design` を入力します。新規アプリの設計と既存アプリの監査に使えます。
 
 ## 実証
 
-Android アプリ「きっかけ」（TaigaShinohara/kikkake、自動化アプリ）へ実際に当てはめ、現状レベル判定（L0）と弱点の特定（ID の振り直し、履歴の非構造化、結果の Toast 依存）、L1→L2→L3→MCP 橋渡しの段階計画までを作成して検証しています。詳細は `references/kikkake-worked-example.md` を参照してください。
+Android アプリ「きっかけ」（TaigaShinohara/kikkake、自動化アプリ）へ実際に当てはめ、現状レベル判定（L0）と弱点の特定（ID の振り直し、履歴の非構造化、結果の Toast 依存）、L1→L2→L3→MCP 橋渡しの段階計画までを作成して検証しています。詳細は [きっかけへの当てはめ](skills/agent-friendly-app-design/references/kikkake-worked-example.md) を参照してください。
 
 ## License
 
