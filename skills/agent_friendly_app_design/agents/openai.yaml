@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent-Friendly App Design"
+  short_description: "自作アプリをAIエージェントがGUIなしで操作・検証できるよう、CLI・JSON・MCP層まで設計する"
+  default_prompt: "$agent_friendly_app_design を使って、このアプリをAIエージェントが操作・検証できるように設計して。"

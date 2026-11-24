@@ -1,0 +1,5 @@
+name: "agent_friendly_app_design"
+title: "AIが使えるアプリ設計（Agent-Friendly App Design）"
+description: "自作アプリをAIエージェントがGUIなしで確実に操作・検証できるようにする。CLI・JSON入出力・安定ID・状態読み取り・ドライラン・検証コマンド・AI向け同梱ドキュメントに加え、その上に被せるMCP層と、作らないのが既定のSDK層の設計指針と、既存アプリへの後付け手順を正本化する。"
+category: "Design"
+include_in_prompt: true
